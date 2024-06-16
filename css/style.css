@@ -118,7 +118,7 @@ body{
     gap: 54px;
 
     margin-bottom: 64px;
-
+    color: black;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 5% 100%, 0 77%);
 }
 
