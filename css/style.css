@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --ff-tomorow: "Tomorrow", sans-serif;
+    --ff-barlow: "Barlow", sans-serif;
+
+    --color-yellow: #F8EF00;
+    --border-color: #00F0FF;
+    --bg-transparent: rgba(0, 240, 255, 0.1);
+    --color-white: #FAFAFA;
+    --color-gray: #BBBBBB;
+    --color-red: #FF003C;
+
+    --index: calc(1vh + 1vw);
+    --container-width: 1120px;
+}
+
+body{
+    background-color: #000;
+    font-family: var(--ff-tomorow);
+
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.wrapper {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: var(--container-width);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.d-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    grid-column-gap: 120px;
+}
+
+.title{
+    color: var(--color-yellow);
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    margin-bottom: 64px;
+}
+
+.password{
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-transparent);
+    color: var(--border-color);
+
+    padding: 20px 25px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.password__box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.password__complexity{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.password__complexity span {
+    width: 20px;
+    height: 3px;
+    background-color: var(--border-color);
+
+    transition: background-color 300ms linear;
+}
+
+.password__complexity span.line-bg {
+    background-color: var(--color-red);
+}
+
+.btn-copy{
+    position: relative;
+    font-family: var(--ff-tomorow);
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-right: 2px solid var(--color-red);
+
+    background: var(--color-yellow);
+    padding: 20px 40px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 54px;
+
+    margin-bottom: 64px;
+
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 5% 100%, 0 77%);
+}
+
+.btn-copy::before{
+    content: 'R25';
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+
+    font-family: var(--ff-barlow);
+    font-size: 8px;
+    line-height: 100%;
+    text-transform: uppercase;
+    background-color: #000;
+
+    color: var(--color-yellow);
+    border-left: 2px solid var(--color-red);
+
+    padding-left: 7px;
+    padding-right: 14px;
+}
+
+.input-range{
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer; 
+}
+.input-range-parent{
+    position: relative;
+    margin-bottom: 64px;
+}
+
+.input-range-parent output{
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+    color: white;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background:var(--border-color);
+    height: 3px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -9px; /* Centers thumb on the track */
+    background-color: #5cd5eb;
+    height: 21px;
+    width: 21px;
+    background-color: var(--color-yellow);    
+}
+
+.filter{
+    max-width: 520px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 28px;
+}
+
+.filter__btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+    color: white;
+
+    font-family: var(--ff-tomorow);
+}
+
+.filter__btn-decor{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-yellow);
+
+    position: relative;
+}
+
+.filter__btn-decor::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    transition: width 300ms linear, height 300ms linear;
+    width: 0px;
+    height: 0px;
+}
+
+.filter__btn.is-active .filter__btn-decor::before{
+    width: 20px;
+    height: 20px;
+}
+
+.password-title{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    letter-spacing: 0.2em;
+    color: white;
+
+    text-align: center;
+}
+
+.password-list{
+    margin-bottom: 24px;
+}
+
+.password-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.password-item:not(:first-child) {
+    margin-bottom: 20px;
+}
+
+.password-item__box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0px;
+}
+
+.password-item__box p{
+    color: var(--color-white);
+}
+
+.password-item__box span {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--color-gray);
+    font-family: var(--ff-barlow);
+    letter-spacing: 0.2em;
+}
+
+.password-item__btn-copy{
+    width: 24px;
+    height: 24px;
+    background: url(../img/copy.svg);
+    background-position: center;
+}
+
+.btn-clear-history{
+    display: inline-block;
+    width: 100%;
+    color: var(--color-yellow);
+    font-family: var(--ff-tomorow);
+    text-align: center;
+    letter-spacing: 0.2em;
+
+    margin: 0 auto;
+}
+
+.not-history-password{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--color-gray);
+    font-family: var(--ff-barlow);
+    letter-spacing: 0.2em;
+    text-align: center;
+}

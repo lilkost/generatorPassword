@@ -1,0 +1,32 @@
+@media (max-width: 1200px) {
+    .wrapper{
+        padding-inline: 10px;
+        padding-block: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .d-grid{
+        grid-template-columns: 1fr;
+        grid-row-gap: 50px;
+    }
+    .title br {
+        display: none;
+    }
+
+    .title{
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 375px) {
+    .filter{
+        grid-template-columns: 1fr;
+    }
+
+    .btn-copy{
+        max-width: 100%;
+        width: 100%;
+    }
+}
